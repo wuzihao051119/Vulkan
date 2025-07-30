@@ -1,0 +1,12 @@
+{
+  "clangd.arguments": [
+    "--compile-commands-dir=build",
+  ],
+  "clangd.fallbackFlags": [
+    "-xc++",
+    "-std=c++20",
+    "-I/usr/include/c++/13",
+    "-I/usr/include/aarch64-linux-gnu/c++/13",
+    "-I/opt/vulkansdk-linux-x86_64-1.4.321.1/aarch64/include"
+  ]
+}
