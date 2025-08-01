@@ -1,30 +1,29 @@
-set(PROJECT_NAME HelloTriangle)
+set(PROJECT_NAME DescriptorSetLayout)
 set(CURRENT_INSTALL_DIR ${CMAKE_SOURCE_DIR}/bin/${PROJECT_NAME})
 
 project(${PROJECT_NAME} LANGUAGES CXX)
 
-add_executable(HelloTriangle
-  hello_triangle.cpp hello_triangle.hpp
+add_executable(${PROJECT_NAME}
+  descriptor_set_layout.cpp descriptor_set_layout.hpp
   main.cpp
 )
 
-target_include_directories(HelloTriangle PRIVATE
+target_include_directories(${PROJECT_NAME} PRIVATE
   ${Vulkan_INCLUDE_DIRS}
 )
 
-target_link_libraries(HelloTriangle PRIVATE
+target_link_libraries(${PROJECT_NAME} PRIVATE
   Vulkan::Vulkan
-  spdlog::spdlog
   glfw
 )
 
-install(TARGETS HelloTriangle
+install(TARGETS DescriptorSetLayout
   RUNTIME DESTINATION ${CURRENT_INSTALL_DIR}
 )
 
 find_program(GLSLANG_VALIDATOR glslangValidator)
 
-set(SHADER_FILES triangle.vert triangle.frag)
+set(SHADER_FILES shader.vert shader.frag)
 
 foreach(SHADER ${SHADER_FILES})
   get_filename_component(FILENAME ${SHADER} NAME)

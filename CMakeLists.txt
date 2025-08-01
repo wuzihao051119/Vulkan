@@ -12,3 +12,5 @@ find_package(spdlog REQUIRED)
 find_package(glfw3 REQUIRED)
 
 add_subdirectory(HelloTriangle)
+add_subdirectory(ComputeNbody)
+add_subdirectory(DescriptorSetLayout)
