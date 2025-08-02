@@ -69,7 +69,7 @@ void DescriptorSetLayout::initVulkan() {
 void DescriptorSetLayout::mainLoop() {
   while (!glfwWindowShouldClose(window)) {
     glfwPollEvents();
-    // drawFrame();
+    drawFrame();
   }
 
   vkDeviceWaitIdle(device);
